@@ -66,3 +66,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## 1st Readme
 
 kaya natin ito guys
+
+13/10/2022
+combine normanand herbert homepage ui and geraffe backend admin panel
+can uppload excel file for register user
+they have crud for slider homepage 

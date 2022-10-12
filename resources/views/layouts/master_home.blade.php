@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>InfoBoard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ URL::asset('/css/style.css') }}" >
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Company Bootstrap Template - Index</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
+        <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -28,37 +25,31 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('frontend/assets/css/style.css')}}" rel="stylesheet">
+        
 
-  <!-- =======================================================
-  * Template Name: Company - v2.1.0
-  * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+        <script src="https://kit.fontawesome.com/3a4d1d45d1.js" crossorigin="anonymous"></script>
+        <!-- norman CSS File home -->
+  <link href="{{ asset('frontend/assets/css/style1.css')}}" rel="stylesheet">
+  <!--norman welcome-css links-->
+<link href="{{ asset('frontend/assets/css/welcome.css')}}" rel="stylesheet">
 
-<body>
+<!--norman Bottom-Slider-css links-->
+<link href="{{ asset('frontend/assets/css/jquery.flipster.min.css')}}" rel="stylesheet">
 
-  <!-- ======= Header ======= -->
-  @include('layouts.body.header')
+<script src="https://kit.fontawesome.com/3a4d1d45d1.js" crossorigin="anonymous"></script>
+  
+<style>
 
-  <!-- ======= Hero Section ======= -->
+</style>
+        
+    </head>
+    <body>
+    @include('layouts.body.header')
 
-  @include('layouts.body.slider')
-
-  <main id="main">
-
-    @yield('home_content')
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  @include('layouts.body.footer')
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="{{ asset('frontend/assets/vendor/jquery/jquery.min.js') }}"></script>
+    @include('layouts.body.slider')
+       
+ <!-- Vendor JS Files -->
+ <script src="{{ asset('frontend/assets/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('frontend/assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
   <script src="{{ asset('frontend/assets/vendor/php-email-form/validate.js') }}"></script>
@@ -71,7 +62,41 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+  @yield('content')  
+        
+  @include('layouts.body.down_slider')
+  @include('layouts.body.footer')
 
-</body>
+        
+                    
+    </body>
+    
+  
+ 
 
+
+<!-- <div class="footer">
+<img src="images/cmdilogo.jpg" alt="" style="width:45px;">
+<p class="p1"> CARD-MRI Development Institute Inc.</p>
+<p class="p2">Poverty eradication through education</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="#">About Us </a>|
+<a href="#">Contacts </a>|
+<a href="#">Campus Map </a>|
+<a href="#">External Links </a>|
+<a href="#">Privacy Policy </a>|
+<a href="#">Terms</a>  
+    
+<p class="p3">Created by Mr. Herber Mangubat | all rights reserved</p>
+</div> -->
+
+<!--js link-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script src="{{ asset('frontend/assets/js/jquery.flipster.min.js') }}"></script>
+      
 </html>

@@ -85,6 +85,22 @@ return Redirect()->back()->with('success','Slider updated Successfully');
            
 
                     }
+
+                    public function Destroy(Request $request ,$id) {
+
+                        $image = Slider::find($request->id);
+                        
+                    
+                        Slider::where("id", $image->id)->delete();
+                    
+                      $notification = array(
+                        'message' => 'lider Image deleted successfully',
+                        'alert-type' => 'error'
+                        
+                                    );
+                        return Redirect()->back()->with($notification);
+                    
+                    }
         
         
 

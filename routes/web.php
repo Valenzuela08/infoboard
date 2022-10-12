@@ -5,6 +5,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ChangePass;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UserController;
 use app\Models\User; 
 
 
@@ -26,7 +27,13 @@ Route::get('/email/verify', function () {
 //return home page
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+//return mediaboard page
+Route::get('/mediaboard', function () {
+    return view('admin.index');
+})->name('mediaboard');
+
 //return admin dashboard
 Route::middleware([
     'auth:sanctum',
@@ -34,9 +41,12 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('admin.index');
+        return view('mediaboard.media_master');
     })->name('dashboard');
 });
+
+Route::get('/import-users', [UserController::class, 'importUsers'])->name('user.import');
+Route::post('/upload-users', [UserController::class, 'uploadUsers'])->name('users.upload');
 
 //logout
 Route::get('/user/logout', [LogoutController::class, 'logout'])->name('user.logout');
@@ -48,6 +58,7 @@ Route::get('/add/slider', [SliderController::class, 'AddSlider'])->name('add.sli
 Route::post('/store/slider', [SliderController::class, 'StoreSlider'])->name('store.slider');
 Route::get('/slider/edit/{id}', [SliderController::class, 'Edit']);
 Route::put('/slider/update/{id}', [SliderController::class, 'Update']);
+Route::get('/slider/destroy/{id}', [SliderController::class, 'Destroy']);
 //change password
 Route::get('/user/password', [ChangePass::class, 'ChangePass'])->name('change.password');
 Route::post('/password/change', [ChangePass::class, 'UpPass'])->name('password.change');

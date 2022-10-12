@@ -65,8 +65,13 @@
                               </a>
                             </li>
                           
-                        
-
+                      
+                            <li >
+                              <a class="sidenav-item-link" href="{{ route('user.import') }}">
+                              <i class="fa-brands fa-critical-role"></i>
+                                <span class="nav-text" style="margin:4px;">Roles</span>
+                              </a>
+                            </li>
                         
                       </div>
                     </ul>

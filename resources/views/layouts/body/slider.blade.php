@@ -3,38 +3,35 @@ $sliders = DB::table('sliders')->get();
 
 
 @endphp
-<section id="hero">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
 
-      <div class="carousel-inner" role="listbox">
-
-        <!-- Slide 1 -->
-        @foreach($sliders as $key => $slider)
-        <!-- Slide 1 -->
-        <div class="carousel-item {{$key == 0 ? 'active' : '' }}" style="background-image: url({{ asset($slider->image)}});">
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-              <h2>Welcome to <span>{{$slider->title}}</span></h2>
-              <p>{{$slider->description}}</p>
-              <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
-            </div>
-          </div>
-        </div>
+<div class="contain">
+@foreach($sliders as $key => $slider)
+<img class="mySlides" src="{{asset($slider -> image)}}" >
 @endforeach
-       
-      </div>
 
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon icofont-simple-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
+<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon icofont-simple-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+</div>
+<script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
 
-      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+            function plusDivs(n) {
+            showDivs(slideIndex += n);
+            }
 
-    </div>
-  </section><!-- End Hero -->
+            function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            x[slideIndex-1].style.display = "block";  
+            }
+            
+            
+            
+            </script>
