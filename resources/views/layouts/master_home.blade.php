@@ -6,7 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ URL::asset('/css/style.css') }}" >
 
+<<<<<<< HEAD
         <!-- Favicons -->
+=======
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CDMI INFOBOARD</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="image/logo.png" rel="icon">
+>>>>>>> 7491fc63fe8b2db054eb01f08dca768e658fb054
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
