@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
     <nav>
         <div class="nav-left">
             <img src="/images/logo.png" alt="Logo">
@@ -81,8 +82,8 @@
                     <a href="{{ route('mediaboard') }}">admin control</a>
                 </li>
                 <li>
-                    <i class="fab fa-facebook-messenger"></i>
-                    <p>Inbox</p>
+                    
+                    <a class="btn fab fa-facebook-messenger" href="/chatify">Inbox</a>
                 </li>
                 <li>
                     <i class="fas fa-calendar-week"></i>
